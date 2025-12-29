@@ -2,7 +2,7 @@ import { type Mode } from '@components/ModeOption/ModeOption';
 import { type Role } from '@components/RoleAutocomplete/RoleAutocomplete';
 import { type TechStack } from '@components/MultiTechStackAutocomplete/MultiTechStackAutocomplete';
 
-export type Level = 'junior' | 'mid' | 'senior' | 'lead';
+export type Level = 'JUNIOR_I' | 'JUNIOR_II' | 'MID_I' | 'MID_II' | 'SENIOR';
 
 export interface ModeConfig {
   mode: Mode;
@@ -79,8 +79,9 @@ export const TECH_STACKS: TechStackOption[] = [
 ];
 
 export const LEVELS: LevelOption[] = [
-  { value: 'junior', label: 'Junior' },
-  { value: 'mid', label: 'Mid-level' },
-  { value: 'senior', label: 'Senior' },
-  { value: 'lead', label: 'Lead' },
+  { value: 'JUNIOR_I', label: 'Junior I' },
+  { value: 'JUNIOR_II', label: 'Junior II' },
+  { value: 'MID_I', label: 'Mid I' },
+  { value: 'MID_II', label: 'Mid II' },
+  { value: 'SENIOR', label: 'Senior' },
 ];

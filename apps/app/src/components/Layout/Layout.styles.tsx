@@ -12,7 +12,7 @@ export const MainContent = styled.main`
   width: 100%;
   display: flex;
   flex-direction: column;
-  padding: 2rem 0;
+  padding: 0.5rem 0;
   min-height: calc(100vh - 200px);
 
   @media (max-width: 768px) {

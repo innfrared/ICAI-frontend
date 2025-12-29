@@ -1,4 +1,5 @@
 import { useState, type ChangeEvent, type FormEvent } from 'react';
+import { useNavigate } from 'react-router-dom';
 import {
   PageContainer,
   FormContainer,
@@ -13,6 +14,8 @@ import ModeOption, { type Mode } from '@components/ModeOption/ModeOption';
 import RoleAutocomplete, { type Role } from '@components/RoleAutocomplete/RoleAutocomplete';
 import MultiTechStackAutocomplete, { type TechStack } from '@components/MultiTechStackAutocomplete/MultiTechStackAutocomplete';
 import { MODES, LEVELS, ROLES, TECH_STACKS, type Level, type LevelOption, type ModeConfig } from '@services/mockData';
+import { startInterviewSession } from '@services/interviews/interviews';
+import type { ApiError } from '@services/api/client';
 
 interface FormData {
   role: Role | '';
@@ -22,12 +25,15 @@ interface FormData {
 }
 
 const InterviewCoach: React.FC = () => {
+  const navigate = useNavigate();
   const [formData, setFormData] = useState<FormData>({
     role: '',
     level: '',
     techStack: [],
     mode: '',
   });
+  const [error, setError] = useState<string>('');
+  const [isLoading, setIsLoading] = useState(false);
 
   const handleLevelChange = (e: ChangeEvent<HTMLSelectElement>): void => {
     setFormData((prev) => ({
@@ -57,10 +63,26 @@ const InterviewCoach: React.FC = () => {
     }));
   };
 
-  const handleSubmit = (e: FormEvent<HTMLFormElement>): void => {
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>): Promise<void> => {
     e.preventDefault();
-    console.log('Form submitted:', formData);
-    // TODO: Handle form submission
+    setError('');
+    setIsLoading(true);
+
+    try {
+      const session = await startInterviewSession({
+        role: formData.role,
+        position: formData.mode || formData.role,
+        level: formData.level,
+        stack: formData.techStack.length > 0 ? formData.techStack : undefined,
+      });
+
+      navigate(`/interviews/${session.id}`);
+    } catch (err) {
+      const apiError = err as ApiError;
+      setError(apiError.message || 'Failed to start interview session. Please try again.');
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   return (
@@ -123,7 +145,25 @@ const InterviewCoach: React.FC = () => {
             </RadioGroup>
           </FormGroup>
 
-          <SubmitButton type="submit">Start Interview</SubmitButton>
+          {error && (
+            <FormGroup>
+              <div style={{ 
+                color: '#ef4444', 
+                fontSize: '0.875rem', 
+                padding: '0.75rem 1rem',
+                backgroundColor: '#fef2f2',
+                border: '1px solid #fecaca',
+                borderRadius: '0.5rem',
+                marginTop: '0.5rem'
+              }}>
+                {error}
+              </div>
+            </FormGroup>
+          )}
+
+          <SubmitButton type="submit" disabled={isLoading}>
+            {isLoading ? 'Starting Interview...' : 'Start Interview'}
+          </SubmitButton>
         </form>
       </FormContainer>
     </PageContainer>

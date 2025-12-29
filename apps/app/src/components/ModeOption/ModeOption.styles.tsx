@@ -12,7 +12,7 @@ export const Tooltip = styled.div`
   top: calc(100% + 10px);
   left: 50%;
   transform: translateX(-50%);
-  background-color: #1a1a1a;
+  background-color: #0f172a;
   color: #ffffff;
   width: 100%;
   padding: 0.75rem 1rem;
@@ -24,7 +24,7 @@ export const Tooltip = styled.div`
   transition: opacity 0.3s ease, visibility 0.3s ease;
   pointer-events: none;
   z-index: 10;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.3);
   max-width: 250px;
   white-space: normal;
   text-align: center;
@@ -36,7 +36,7 @@ export const Tooltip = styled.div`
     left: 50%;
     transform: translateX(-50%);
     border: 6px solid transparent;
-    border-bottom-color: #1a1a1a;
+    border-bottom-color: #0f172a;
   }
 `;
 

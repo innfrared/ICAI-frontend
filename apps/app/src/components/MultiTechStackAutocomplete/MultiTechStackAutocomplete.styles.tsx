@@ -11,16 +11,16 @@ export const Input = styled.input`
   padding: 0.75rem;
   font-size: 1rem;
   box-sizing: border-box;
-  border: 2px solid #e0e0e0;
+  border: 2px solid #e5e7eb;
   border-radius: 0.5rem;
   background-color: #ffffff;
-  color: #333333;
+  color: #0f172a;
   cursor: pointer;
   transition: border-color 0.3s ease;
 
   &:focus {
     outline: none;
-    border-color: #667eea;
+    border-color: #9ca3af;
   }
 `;
 
@@ -31,7 +31,7 @@ export const OptionsList = styled.ul`
   right: 0;
   margin-top: 0.25rem;
   background-color: #ffffff;
-  border: 2px solid #e0e0e0;
+  border: 2px solid #e5e7eb;
   border-radius: 0.5rem;
   list-style: none;
   padding: 0;
@@ -39,20 +39,20 @@ export const OptionsList = styled.ul`
   max-height: 200px;
   overflow-y: auto;
   z-index: 9999;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 `;
 
 export const Option = styled.li<{ $isHighlighted: boolean }>`
   padding: 0.75rem;
   cursor: pointer;
-  color:rgb(70, 70, 70);
-  background-color: ${(props) => (props.$isHighlighted ? '#f5f5f5' : '#ffffff')};
+  color: #475569;
+  background-color: ${(props) => (props.$isHighlighted ? '#f3f4f6' : '#ffffff')};
   transition: background-color 0.2s ease;
   opacity: 1;
 
   &:hover {
-    background-color: #f5f5f5;
-    color:rgb(0, 0, 0);
+    background-color: #f3f4f6;
+    color: #0f172a;
   }
 
   &:first-child {
@@ -78,7 +78,7 @@ export const SelectedItem = styled.div`
   align-items: center;
   gap: 0.5rem;
   padding: 0.5rem 0.75rem;
-  background-color: #667eea;
+  background-color: #1e293b;
   color: #ffffff;
   border-radius: 0.375rem;
   font-size: 0.875rem;

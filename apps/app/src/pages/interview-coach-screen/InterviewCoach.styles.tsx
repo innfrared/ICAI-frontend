@@ -14,11 +14,11 @@ const popIn = keyframes`
 export const PageContainer = styled.div`
   min-height: 100%;
   padding: 4rem 2rem;
-  background-color: #f5f5f5;
+  background-color: #ffffff;
   justify-content: center;
   align-items: center;
   display: flex;
-  background-image: radial-gradient(circle, #9e9e9e 1px, transparent 1px);
+  background-image: radial-gradient(circle, #9ca3af 1px, transparent 1px);
   background-size: 20px 20px;
   background-position: 0 0, 10px 10px;
 
@@ -40,7 +40,7 @@ export const FormContainer = styled.div`
 export const Title = styled.h1`
   font-size: 2rem;
   font-weight: 700;
-  color: #333333;
+  color: #0f172a;
   margin-bottom: 2rem;
   text-align: center;
   animation: ${popIn} 0.5s ease-out;
@@ -61,7 +61,7 @@ export const Label = styled.label`
   display: block;
   font-size: 0.875rem;
   font-weight: 600;
-  color: #555555;
+  color: #475569;
   margin-bottom: 0.5rem;
 `;
 
@@ -69,16 +69,16 @@ export const Select = styled.select`
   width: 100%;
   padding: 0.75rem;
   font-size: 1rem;
-  border: 2px solid #e0e0e0;
+  border: 2px solid #e5e7eb;
   border-radius: 0.5rem;
   background-color: #ffffff;
-  color: #333333;
+  color: #0f172a;
   cursor: pointer;
   transition: border-color 0.3s ease;
 
   &:focus {
     outline: none;
-    border-color: #667eea;
+    border-color: #9ca3af;
   }
 `;
 
@@ -96,7 +96,7 @@ export const Tooltip = styled.div`
   bottom: calc(100% + 10px);
   left: 50%;
   transform: translateX(-50%);
-  background-color: #1a1a1a;
+  background-color: #0f172a;
   color: #ffffff;
   width: 100%;
   padding: 0.75rem 1rem;
@@ -108,7 +108,7 @@ export const Tooltip = styled.div`
   transition: opacity 0.3s ease, visibility 0.3s ease;
   pointer-events: none;
   z-index: 10;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.3);
   max-width: 250px;
   white-space: normal;
   text-align: center;
@@ -120,7 +120,7 @@ export const Tooltip = styled.div`
     left: 50%;
     transform: translateX(-50%);
     border: 6px solid transparent;
-    border-top-color: #1a1a1a;
+    border-top-color: #0f172a;
   }
 `;
 
@@ -184,7 +184,7 @@ export const SubmitButton = styled.button`
   font-size: 1.125rem;
   font-weight: 600;
   color: #ffffff;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
   border: none;
   border-radius: 0.5rem;
   cursor: pointer;
@@ -196,7 +196,7 @@ export const SubmitButton = styled.button`
 
   &:hover {
     transform: translateY(-2px);
-    box-shadow: 0 6px 12px rgba(102, 126, 234, 0.4);
+    box-shadow: 0 6px 12px rgba(30, 41, 59, 0.4);
   }
 
   &:active {

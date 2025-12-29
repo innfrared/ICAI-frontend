@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 export const FooterContainer = styled.footer`
   width: 100%;
-  background-color: #1f2937;
+  background-color: #0f172a;
   color: #ffffff;
   margin-top: auto;
 `;
@@ -42,17 +42,17 @@ export const FooterTitle = styled.h3`
 
 export const FooterLink = styled(Link)`
   font-size: 0.875rem;
-  color: #9ca3af;
+  color: #cbd5e1;
   text-decoration: none;
   transition: color 0.2s ease;
 
   &:hover {
-    color: #667eea;
+    color: #fde68a;
   }
 `;
 
 export const FooterBottom = styled.div`
-  border-top: 1px solid #374151;
+  border-top: 1px solid #334155;
   padding: 1.5rem 2rem;
   max-width: 1280px;
   margin: 0 auto;
@@ -60,7 +60,7 @@ export const FooterBottom = styled.div`
 
 export const Copyright = styled.p`
   font-size: 0.875rem;
-  color: #9ca3af;
+  color: #94a3b8;
   text-align: center;
   margin: 0;
 `;
@@ -72,7 +72,7 @@ export const SocialLinks = styled.div`
 `;
 
 export const SocialLink = styled.a`
-  color: #9ca3af;
+  color: #cbd5e1;
   transition: color 0.2s ease;
   display: flex;
   align-items: center;
@@ -84,8 +84,8 @@ export const SocialLink = styled.a`
   transition: all 0.2s ease;
 
   &:hover {
-    color: #667eea;
-    background-color: rgba(102, 126, 234, 0.1);
+    color: #fde68a;
+    background-color: rgba(253, 230, 138, 0.15);
     transform: translateY(-2px);
   }
 

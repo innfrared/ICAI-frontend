@@ -7,8 +7,8 @@ export const LoginContainer = styled.div`
   align-items: center;
   justify-content: center;
   padding: 4rem 2rem;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  background-image: radial-gradient(circle, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+  background-color: #ffffff;
+  background-image: radial-gradient(circle, #9ca3af 1px, transparent 1px);
   background-size: 30px 30px;
 
   @media (max-width: 768px) {
@@ -44,14 +44,14 @@ export const LoginCard = styled.div`
 export const LoginTitle = styled.h1`
   font-size: 2rem;
   font-weight: 700;
-  color: #1f2937;
+  color: #0f172a;
   margin: 0 0 0.5rem 0;
   text-align: center;
 `;
 
 export const LoginSubtitle = styled.p`
   font-size: 0.9375rem;
-  color: #6b7280;
+  color: #475569;
   margin: 0 0 2rem 0;
   text-align: center;
 `;
@@ -71,7 +71,7 @@ export const FormGroup = styled.div`
 export const Label = styled.label`
   font-size: 0.875rem;
   font-weight: 500;
-  color: #374151;
+  color: #475569;
 `;
 
 export const Input = styled.input`
@@ -81,17 +81,17 @@ export const Input = styled.input`
   border: 2px solid #e5e7eb;
   border-radius: 0.5rem;
   background-color: #ffffff;
-  color: #1f2937;
+  color: #0f172a;
   transition: border-color 0.2s ease, box-shadow 0.2s ease;
 
   &:focus {
     outline: none;
-    border-color: #667eea;
-    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+    border-color: #9ca3af;
+    box-shadow: 0 0 0 3px rgba(156, 163, 175, 0.1);
   }
 
   &::placeholder {
-    color: #9ca3af;
+    color: #94a3b8;
   }
 `;
 
@@ -101,20 +101,25 @@ export const SubmitButton = styled.button`
   font-size: 1rem;
   font-weight: 600;
   color: #ffffff;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
   border: none;
   border-radius: 0.5rem;
   cursor: pointer;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, opacity 0.2s ease;
   margin-top: 0.5rem;
 
-  &:hover {
+  &:hover:not(:disabled) {
     transform: translateY(-2px);
-    box-shadow: 0 6px 12px rgba(102, 126, 234, 0.4);
+    box-shadow: 0 6px 12px rgba(30, 41, 59, 0.4);
   }
 
-  &:active {
+  &:active:not(:disabled) {
     transform: translateY(0);
+  }
+
+  &:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
   }
 `;
 
@@ -122,7 +127,7 @@ export const LoginFooter = styled.div`
   margin-top: 1.5rem;
   text-align: center;
   font-size: 0.875rem;
-  color: #6b7280;
+  color: #475569;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -130,13 +135,13 @@ export const LoginFooter = styled.div`
 `;
 
 export const LoginLink = styled(Link)`
-  color: #667eea;
+  color: #1e293b;
   font-weight: 500;
   text-decoration: none;
   transition: color 0.2s ease;
 
   &:hover {
-    color: #764ba2;
+    color: #0f172a;
     text-decoration: underline;
   }
 `;

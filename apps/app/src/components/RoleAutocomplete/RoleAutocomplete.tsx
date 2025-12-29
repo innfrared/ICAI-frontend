@@ -38,6 +38,15 @@ const RoleAutocomplete: React.FC<RoleAutocompleteProps> = ({
     role.label.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
+  // Initialize searchTerm from value prop
+  useEffect(() => {
+    if (value && selectedRole) {
+      setSearchTerm(selectedRole.label);
+    } else if (!value) {
+      setSearchTerm('');
+    }
+  }, [value, selectedRole]);
+
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent): void => {
       if (

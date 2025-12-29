@@ -3,6 +3,11 @@ import styled from 'styled-components';
 export const HomeContainer = styled.div`
   width: 100%;
   min-height: 100%;
+  background-color: #ffffff;
+  background-image: radial-gradient(circle, #9ca3af 1px, transparent 1px);
+  background-size: 20px 20px;
+  background-position: 0 0, 10px 10px;
+  position: relative;
 `;
 
 export const HeroSection = styled.section`
@@ -23,7 +28,7 @@ export const HeroSection = styled.section`
 export const Title = styled.h1`
   font-size: 3.5rem;
   font-weight: 800;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, #1e293b 0%, #334155 50%, #fde68a 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -37,7 +42,7 @@ export const Title = styled.h1`
 
 export const Description = styled.p`
   font-size: 1.25rem;
-  color: #6b7280;
+  color: #475569;
   max-width: 600px;
   margin: 0;
   line-height: 1.6;
@@ -52,7 +57,7 @@ export const CTAButton = styled.button`
   font-size: 1.125rem;
   font-weight: 600;
   color: #ffffff;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
   border: none;
   border-radius: 0.75rem;
   cursor: pointer;
@@ -61,7 +66,7 @@ export const CTAButton = styled.button`
 
   &:hover {
     transform: translateY(-2px);
-    box-shadow: 0 10px 20px rgba(102, 126, 234, 0.4);
+    box-shadow: 0 10px 20px rgba(30, 41, 59, 0.4);
   }
 
   &:active {
@@ -93,20 +98,21 @@ export const FeatureCard = styled.div`
 
   &:hover {
     transform: translateY(-4px);
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    border-color: #d1d5db;
   }
 `;
 
 export const FeatureTitle = styled.h3`
   font-size: 1.25rem;
   font-weight: 600;
-  color: #1f2937;
+  color: #0f172a;
   margin: 0 0 0.75rem 0;
 `;
 
 export const FeatureDescription = styled.p`
   font-size: 1rem;
-  color: #6b7280;
+  color: #475569;
   margin: 0;
   line-height: 1.6;
 `;

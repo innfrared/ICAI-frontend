@@ -31,9 +31,9 @@ export const HeaderContent = styled.div`
 export const Logo = styled(Link)`
   font-size: 1.5rem;
   font-weight: 700;
-  color: #1f2937;
+  color: #0f172a;
   text-decoration: none;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -62,14 +62,14 @@ export const Nav = styled.nav`
 export const NavLink = styled(Link)<{ $isActive: boolean }>`
   font-size: 0.9375rem;
   font-weight: 500;
-  color: ${(props) => (props.$isActive ? '#667eea' : '#6b7280')};
+  color: ${(props) => (props.$isActive ? '#1e293b' : '#475569')};
   text-decoration: none;
   padding: 0.5rem 0;
   position: relative;
   transition: color 0.2s ease;
 
   &:hover {
-    color: #667eea;
+    color: #1e293b;
   }
 
   &::after {
@@ -79,7 +79,7 @@ export const NavLink = styled(Link)<{ $isActive: boolean }>`
     left: 0;
     width: ${(props) => (props.$isActive ? '100%' : '0')};
     height: 2px;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(135deg, #1e293b 0%, #fde68a 100%);
     transition: width 0.3s ease;
   }
 
@@ -106,25 +106,37 @@ export const AuthButton = styled(Link)<{ $variant: 'primary' | 'outline' }>`
   text-decoration: none;
   transition: all 0.2s ease;
   border: ${(props) =>
-    props.$variant === 'outline' ? '1.5px solid #e5e7eb' : 'none'};
+    props.$variant === 'outline' ? '1.5px solid #e2e8f0' : 'none'};
   background: ${(props) =>
     props.$variant === 'primary'
-      ? 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)'
+      ? 'linear-gradient(135deg, #1e293b 0%, #334155 100%)'
       : 'transparent'};
-  color: ${(props) => (props.$variant === 'primary' ? '#ffffff' : '#374151')};
+  color: ${(props) => (props.$variant === 'primary' ? '#ffffff' : '#475569')};
 
   &:hover {
     transform: translateY(-1px);
     box-shadow: ${(props) =>
       props.$variant === 'primary'
-        ? '0 4px 12px rgba(102, 126, 234, 0.4)'
-        : '0 2px 8px rgba(0, 0, 0, 0.1)'};
+        ? '0 4px 12px rgba(30, 41, 59, 0.4)'
+        : '0 2px 8px rgba(253, 230, 138, 0.2)'};
     border-color: ${(props) =>
-      props.$variant === 'outline' ? '#667eea' : 'transparent'};
-    color: ${(props) => (props.$variant === 'outline' ? '#667eea' : '#ffffff')};
+      props.$variant === 'outline' ? '#1e293b' : 'transparent'};
+    color: ${(props) => (props.$variant === 'outline' ? '#1e293b' : '#ffffff')};
   }
 
   &:active {
     transform: translateY(0);
   }
+`;
+
+export const UserMenuWrapper = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+`;
+
+export const UserName = styled.span`
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #475569;
 `;
