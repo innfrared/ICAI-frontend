@@ -5,13 +5,11 @@ import {
   Description,
   StartButton,
 } from './Landing.styles';
-import { syncData } from '../../utils/syncData';
 
 const Landing: React.FC = () => {
   const navigate = useNavigate();
 
   const handleStartClick = async (): Promise<void> => {
-    await syncData();
     navigate('/interview-coach');
   };
 
