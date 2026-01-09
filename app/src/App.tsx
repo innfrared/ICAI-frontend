@@ -19,16 +19,14 @@ const App: React.FC = () => {
           <Route path="/" element={<Layout />}>
             <Route index element={<Navigate to="/home" replace />} />
             <Route path="home" element={<Home />} />
+            <Route path="interview-coach" element={<InterviewCoach />} />
             
-            {/* Protected routes - require authentication */}
             <Route element={<ProtectedLayout />}>
-              <Route path="interview-coach" element={<InterviewCoach />} />
               <Route path="interviews" element={<InterviewSessions />} />
               <Route path="interviews/:sessionId" element={<InterviewSession />} />
               <Route path="profile" element={<Profile />} />
             </Route>
             
-            {/* Auth routes - redirect if already authenticated */}
             <Route element={<AuthLayout />}>
               <Route path="login" element={<Login />} />
               <Route path="register" element={<Register />} />

@@ -10,12 +10,15 @@ import {
   FeatureTitle,
   FeatureDescription,
 } from './Home.styles';
+import { syncData } from '../../utils/syncData';
 
 const Home: React.FC = () => {
   const navigate = useNavigate();
 
   const handleStartClick = (): void => {
-    navigate('/interview-coach');
+    syncData().then(() => {
+      navigate('/interview-coach');
+    });
   };
 
   return (
