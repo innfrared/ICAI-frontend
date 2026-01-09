@@ -29,18 +29,23 @@ export const HeaderContent = styled.div`
 `;
 
 export const Logo = styled(Link)`
-  font-size: 1.5rem;
-  font-weight: 700;
-  color: #0f172a;
+  display: flex;
+  align-items: center;
   text-decoration: none;
-  background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
   transition: opacity 0.2s ease;
 
   &:hover {
     opacity: 0.8;
+  }
+
+  img {
+    height: 3rem;
+    width: auto;
+    object-fit: contain;
+
+    @media (max-width: 768px) {
+      height: 2rem;
+    }
   }
 `;
 

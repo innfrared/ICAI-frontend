@@ -34,7 +34,9 @@ const Header: React.FC = () => {
   return (
     <HeaderContainer>
       <HeaderContent>
-        <Logo to="/home">Interview Coach</Logo>
+        <Logo to="/home">
+          <img src="/logolong.png" alt="Interview Coach" />
+        </Logo>
         <Nav>
           <NavLink to="/home" $isActive={isActive('/home')}>
             Home
